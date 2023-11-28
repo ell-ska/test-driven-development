@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Color guessing game  
+Components: App: 
+                  Handles game state
+            Header:
+                    Display game title 
+            Colors: 
+                    Hex colors for user to guess between
+            Color: 
+                    A button for each color to click on
+            ColorToGuess: 
+                    Displaying the color user is trying to guess
+            WrongGuess:
+                    Tells user if guess was incorrect
+            CorrectGuessesInARow:
+                    Displaying the number of correct guesses user has made in a row                
 
-## Getting Started
+State: colors
+       correctColor
+       wrongGuess
+      correctGuessesInARow 
 
-First, run the development server:
+Gameplay: Render buttons with colors
+          Comparison ( user button clicked & correctColor )
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Result: Correct Guess: 
+                        Change the color to guess to a new color
+                        Change the Color options to new options
+                        Increment correct guesses in a row by 1     
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+        Incorrect Guess: 
+                          Tell user they made a wrong guess
+                          Set correct guesses in a row to 0  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## SCREENSHOTS
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Initial game
+![image](https://github.com/maxhaggmancmedu/testing-guessing-game/assets/116894648/616e445c-5f22-4042-87d5-99523a67d7cd)
 
-## Learn More
+### User incorrect guess
+![image](https://github.com/maxhaggmancmedu/testing-guessing-game/assets/116894648/dd836e29-553c-4b0c-93ad-ac2126da682c)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### User correct guess
+![image](https://github.com/maxhaggmancmedu/testing-guessing-game/assets/116894648/ba9518e6-65ac-4295-a06a-4f045f67647d)
