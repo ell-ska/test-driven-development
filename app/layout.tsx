@@ -22,7 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(josefinSans.variable, 'font-primary bg-slate-800 text-slate-50')}>
+      <body
+        className={cn(
+          josefinSans.variable,
+          'flex flex-col min-h-screen font-primary bg-slate-800 text-slate-50'
+        )}
+      >
         <Header />
         {children}
       </body>
