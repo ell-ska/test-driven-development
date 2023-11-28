@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import WrongGuess from "../../../../own-projects/challenges-and-practice/color-guessing/src/components/WrongGuess";
+import WrongGuess from "../components/WrongGuess";
 
 test("Wrong guess component is not being displayed in the document when page has rendered", () => {
   render(<WrongGuess />);
