@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import App from "../App";
+import Home from "@/app/page";
 
 // dont focus on this function, it is just used to convert RGB to HEX
 function convertBackToHex(value) {
@@ -26,14 +26,14 @@ function convertBackToHex(value) {
 
 describe("Render app and game functionality works as expected", () => {
   test("Render app comonent", () => {
-    render(<App />);
+    render(<Home />);
     const app = screen.getByTestId("app");
 
     expect(app).toBeInTheDocument();
   });
 
   test("If wrong guess is made render a wrong guess component", () => {
-    render(<App />);
+    render(<Home />);
     const buttons = screen.getAllByRole("button");
     const correctColorInRGB = screen.getByTestId(/color-to-guess/i).style.backgroundColor;
     // the function below just converts correctColor back to HEX format because Javascript automatically converted the HEX to rgb...
@@ -53,7 +53,7 @@ describe("Render app and game functionality works as expected", () => {
   });
 
   test("If wrong guess is made change correct guesses in a row to 0", () => {
-    render(<App />);
+    render(<Home />);
     const buttons = screen.getAllByRole("button");
     const correctColorInRGB = screen.getByTestId(/color-to-guess/i).style.backgroundColor;
     const correctColor = convertBackToHex(correctColorInRGB);
@@ -68,7 +68,7 @@ describe("Render app and game functionality works as expected", () => {
   });
 
   test("If user makes correct guess increase correct guesses in a row value by 1", () => {
-    render(<App />);
+    render(<Home />);
     let buttons = screen.getAllByRole("button");
     let correctColorInRGB = screen.getByTestId(/color-to-guess/i).style.backgroundColor;
     let correctColor = convertBackToHex(correctColorInRGB);
@@ -97,7 +97,7 @@ describe("Render app and game functionality works as expected", () => {
   });
 
   test("If user makes correct guess generate new hex colors for each button", () => {
-    render(<App />);
+    render(<Home />);
     const buttons = screen.getAllByRole("button");
     const correctColorInRGB = screen.getByTestId(/color-to-guess/i).style.backgroundColor;
     const correctColor = convertBackToHex(correctColorInRGB);
@@ -115,7 +115,7 @@ describe("Render app and game functionality works as expected", () => {
   });
 
   test("If user makes correct guess generate a new color for user to guess", () => {
-    render(<App />);
+    render(<Home />);
     const buttons = screen.getAllByRole("button");
     const correctColorInRGB = screen.getByTestId(/color-to-guess/i).style.backgroundColor;
     const correctColor = convertBackToHex(correctColorInRGB);
