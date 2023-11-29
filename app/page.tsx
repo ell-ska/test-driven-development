@@ -55,7 +55,7 @@ const Home = () => {
   return (
     <>
       <Header highScore={highScore} />
-      <main data-testid='app' className='grow flex flex-col justify-end items-center sm:justify-center p-4'>
+      <main data-testid='app' className='grow flex flex-col justify-end items-center sm:justify-center p-4 pt-24'>
         <CorrectGuessesInARow correctGuessesInARow={correctGuesses} />
         <ColorToGuess correctColor={currentGame?.correct.value}>
           {isWrongGuess && <WrongGuess setIsWrongGuess={setIsWrongGuess} />}
