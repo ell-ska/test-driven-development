@@ -3,13 +3,13 @@ This game is built from [Max's tests](https://github.com/maxhaggmancmedu/testing
 
 ### Feedback for existing tests
 - overall everything worked well and was easily understandable!
-- the only issue i had was that unit tests run in isolation would pass even if the code was incorrect
+- the only issue i had was that some unit tests run in isolation would pass even if the code was incorrect
   - *Color to guess component renders and has the correct color → Background color is the same as the color user is trying to guess*
       - in isolation this will still pass even if no background color is added
   - *Correct guesses component and its value renders → So that the value of correctGuesses is 0 when page has rendered*
-      - same thing here, will always pass since you're passing in 0 as the prop
+      - the test will always pass as long as you are rendering `correctGuesses` since you're passing in 0 as the prop, what the test actually tests is that the prop is rendred correctly. this test should be renamed or done differently
   - *Wrong guess component is not being displayed in the document when page has rendered*
-      - ...and same here, I can render the component on page load and still pass the test when run in isolation
+      - i can render the component on page load and still pass the test when run in isolation. i'm not completly sure why but i know the role `paragraph` is not recommended according to [w3](https://www.w3.org/TR/html-aria/#docconformance) so maybe it has something to do with that
 
 ### Tests that would have been nice to have
 - a test to ensure the same hex option isn’t displayed twice
