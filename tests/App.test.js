@@ -132,4 +132,15 @@ describe("Render app and game functionality works as expected", () => {
 
     expect(correctColor).not.toEqual(newCorrectColor);
   });
+  
+  test('make sure the same option can not be rendered twice', () => {
+    render(<Home />)
+
+    const buttons = screen.getAllByRole('button')
+    const buttonHexColors = buttons.map(button => button.textContent)
+
+    const colorIsUnique = () => new Set(buttonHexColors).size === buttonHexColors.length
+
+    expect(colorIsUnique()).toBeTruthy()
+  })
 });
