@@ -12,8 +12,7 @@ This game is built from [Max's tests](https://github.com/maxhaggmancmedu/testing
       - ...and same here, I can render the component on page load and still pass the test when run in isolation
 
 ### Tests that would have been nice to have
-- a test to ensure the same hex isn’t displayed twice
-- a test to ensure the correct answer is in the options
+- a test to ensure the same hex option isn’t displayed twice
 
 ## Original readme
 
