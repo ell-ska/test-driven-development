@@ -15,7 +15,19 @@ export const generateGame = async (amountOfOptions: number = 3) => {
         const response = await fetch(baseUrl + color)
         const data = await response.json()
 
-        options = [...options, { name: data.name.value, value: data.hex.value.replace('#', '') }]
+        const isDuplicate = options.map(option => option.name).includes(data.name.value)
+        const isBlack = !!data.name.value.match(/black/i) // black is tooooo easy
+
+        if (!isDuplicate && !isBlack) {
+          options = [
+            ...options,
+            {
+              name: data.name.value, 
+              value: data.name.closest_named_hex.replace('#', '')
+            }
+          ]
+        }
+
       } catch (error) {
         console.log(error)
       }
