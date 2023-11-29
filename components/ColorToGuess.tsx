@@ -1,14 +1,17 @@
 type ColorToGuessProps = {
+  children?: React.ReactNode
   correctColor: string
 }
 
-const ColorToGuess = ({ correctColor }: ColorToGuessProps) => {
+const ColorToGuess = ({ children, correctColor }: ColorToGuessProps) => {
   return (
     <div
       data-testid='color-to-guess'
       style={{ backgroundColor: `#${correctColor}` }}
-      className='h-80 w-80 rounded-full'
-    />
+      className='h-64 w-64 sm:h-80 sm:w-80 rounded-full relative'
+    >
+      {children}
+    </div>
   )
 }
 

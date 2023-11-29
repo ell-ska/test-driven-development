@@ -17,7 +17,8 @@ const WrongGuess = ({ setIsWrongGuess }: WrongGuessProps) => {
   return (
     <p
       data-testid='wrong-guess'
-      className='absolute left-4 bottom-4 text-lg bg-slate-900 px-4 py-2 rounded-full'
+      role='alert'
+      className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-lg bg-slate-900 w-min px-4 py-4 rounded-full whitespace-nowrap select-none'
     >
       wrong guess
     </p>

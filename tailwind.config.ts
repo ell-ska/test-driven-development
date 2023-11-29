@@ -9,11 +9,6 @@ const config: Config = {
   theme: {
     fontFamily: {
       primary: 'var(--font-josefin-sans)'
-    },
-    extend: {
-      screens: {
-        xs: '480px'
-      }
     }
   },
   plugins: [],

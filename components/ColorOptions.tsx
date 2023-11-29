@@ -9,7 +9,7 @@ const ColorOptions = ({ submitGuess, colors }: ColorOptionsProps) => {
   return (
     <div
       data-testid='color-options'
-      className='flex flex-col w-full xs:w-auto xs:flex-row gap-4 mt-8'
+      className='flex flex-col w-full sm:w-auto sm:flex-row gap-4 mt-8'
     >
       {colors.map(color => <Color submitGuess={submitGuess} key={color} color={color} />)}
     </div>

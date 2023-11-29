@@ -21,6 +21,7 @@ const Home = () => {
 
   const submitGuess = (option: string) => {
     if (option === currentGame.correct) {
+      setIsWrongGuess(false)
       setCorrectGuesses(correctGuesses + 1)
       setCurrentGame(generateGame())
     } else {
@@ -30,11 +31,12 @@ const Home = () => {
   }
 
   return (
-    <main data-testid='app' className='flex flex-col items-center justify-center grow px-4'>
+    <main data-testid='app' className='grow flex flex-col justify-end items-center sm:justify-center p-4'>
       <CorrectGuessesInARow correctGuessesInARow={correctGuesses} />
-      <ColorToGuess correctColor={currentGame.correct} />
+      <ColorToGuess correctColor={currentGame.correct} >
+        {isWrongGuess && <WrongGuess setIsWrongGuess={setIsWrongGuess} />}
+      </ColorToGuess>
       <ColorOptions submitGuess={submitGuess} colors={currentGame.options} />
-      {isWrongGuess && <WrongGuess setIsWrongGuess={setIsWrongGuess} />}
     </main>
   )
 }
