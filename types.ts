@@ -1,4 +1,9 @@
-export type gameColor = {
-  correct: string
-  options: string[]
+export type color = {
+  name: string
+  value: string
+}
+
+export type game = {
+  correct: color
+  options: color[]
 }
