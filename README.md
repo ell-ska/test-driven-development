@@ -1,5 +1,21 @@
 # Color guessing game  
- 
+This game is built from [Max's tests](https://github.com/maxhaggmancmedu/testing-guessing-game), it should pass all tests avaliable!
+
+### Feedback for existing tests
+- overall everything worked well and was easily understandable!
+- the only issue i had was that unit tests run in isolation would pass even if the code was incorrect
+  - *Color to guess component renders and has the correct color → Background color is the same as the color user is trying to guess*
+      - in isolation this will still pass even if no background color is added
+  - *Correct guesses component and its value renders → So that the value of correctGuesses is 0 when page has rendered*
+      - same thing here, will always pass since you're passing in 0 as the prop
+  - *Wrong guess component is not being displayed in the document when page has rendered*
+      - ...and same here, I can render the component on page load and still pass the test when run in isolation
+
+### Tests that would have been nice to have
+- a test to ensure the same hex isn’t displayed twice
+- a test to ensure the correct answer is in the options
+
+## Original readme
 
     Components: App: 
                      Handles game state
