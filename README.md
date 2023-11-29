@@ -1,5 +1,7 @@
 # Color guessing game  
-This game is built from [Max's tests](https://github.com/maxhaggmancmedu/testing-guessing-game), it should pass all tests avaliable!
+this game is built from [Max's tests](https://github.com/maxhaggmancmedu/testing-guessing-game), it should pass all tests avaliable!
+
+[live site](https://original-color-guessing-game-snowy.vercel.app/)
 
 ### Feedback for existing tests
 - overall everything worked well and was easily understandable!
